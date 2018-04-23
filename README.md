@@ -32,7 +32,14 @@ Portrait divergences can be computed at the command line or within Python script
     `python portrait_divergence.py --weighted=strength -b 10 --graphml g.graphml h.graphml`
 
 
+See the help string for more: `python portrait_divergence.py -h`
+
 #### Python
+
+Here's a script to compare an 
+[Erdős-Rényi](https://en.wikipedia.org/wiki/Erdős–Rényi_model) graph
+and a 
+[Barabási-Albert](https://en.wikipedia.org/wiki/Barabási–Albert_model) graph:
 
 ```Python
 import networkx as nx
