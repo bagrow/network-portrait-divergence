@@ -272,24 +272,6 @@ Edgelists specify the network in a two- or three-column matrix format:
     ...
 Columns are delimited with whitespace by default.
 
-
-Examples
-=========
-
-# basic example:
-python {fn} data/net1.edgelist data/net2.edgelist
-
-# directed networks stored in graphml files:
-python {fn} -d --graphml digraph_time1.graphml digraph_time2.graphml
-
-# use C++ code (assuming it's installed):
-python {fn} --cpp big_g.edgelist big_h.edgelist
-
-# weighted graphs (`strength` edge attribute) w 10-percentile bins on
-# Dijkstra's paths lengths
-python {fn} --weighted=strength -b 10 --graphml g.graphml h.graphml
-
-
 """.format(fn=sys.argv[0])
     
     # process arguments
