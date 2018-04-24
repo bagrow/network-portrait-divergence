@@ -3,7 +3,7 @@
 
 # portrait_divergence.py
 # Jim Bagrow
-# Last Modified: 2018-04-22
+# Last Modified: 2018-04-24
 
 import sys, os
 import tempfile
@@ -292,7 +292,7 @@ Columns are delimited with whitespace by default.
     parser.add_argument('--cpp', action='store_true', 
             help='use faster C++ implementation of the network portraits. Requires B_matrix executable to be installed')
     args = parser.parse_args()
-    # print(args)
+    #print(args)
     
     if args.cpp:
         portrait = portrait_cpp
