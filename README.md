@@ -1,7 +1,7 @@
 Portrait Divergence
 ===================
 
-Python code for computing **portrait divergences**, a simple general-purpose
+Python code for computing **portrait divergences**, a simple, general-purpose
 tool for comparing networks.
 
 Please see the paper for more details:
