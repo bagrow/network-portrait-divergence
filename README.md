@@ -1,7 +1,8 @@
 Portrait Divergence
 ===================
 
-Python code for computing **portrait divergences**, a general-purpose tool for comparing networks.
+Python code for computing **portrait divergences**, a general-purpose tool for
+comparing networks.
 
 Please see the paper for more details:
 
@@ -12,52 +13,86 @@ James P. Bagrow and Erik M. Bollt, 2018
 
 ## Usage
 
-The output of each calculation is a float between 0 and 1 describing how similar the two
-networks are (0 = identical, 1 = maximally different).
+The output of each calculation is a float between 0 and 1 describing how
+similar the two networks are (0 = identical, 1 = maximally different, according
+to this measure).
 
-Portrait divergences can be computed at the command line or within Python scripts:
+
+Portrait divergences can be computed at the command line or within
+Python scripts:
 
 #### Command line
 
 1. Basic example:  
     `python portrait_divergence.py data/net1.edgelist data/net2.edgelist`
 
-1. Directed networks stored in graphml files:  
+1. Networks stored in graphml files:  
     `python portrait_divergence.py -d --graphml digraph_time1.graphml digraph_time2.graphml`
 
 1. Use C++ code (assuming it's installed):  
     `python portrait_divergence.py --cpp big_g.edgelist big_h.edgelist`
 
-1. Weighted graphs (`strength` edge attribute) w 10-percentile bins on Dijkstra's paths lengths:  
+1. Let's get crazy:  
     `python portrait_divergence.py --weighted=strength -b 10 --graphml g.graphml h.graphml`
 
+
+The code supports directed and weighted networks.
 
 See the help string for more: `python portrait_divergence.py -h`
 
 #### Python
 
-Here's a script to compare an 
-[Erdős-Rényi](https://en.wikipedia.org/wiki/Erdős–Rényi_model) graph
-and a 
-[Barabási-Albert](https://en.wikipedia.org/wiki/Barabási–Albert_model) graph:
+Here's a script to compare
+[Erdős-Rényi](https://en.wikipedia.org/wiki/Erdős–Rényi_model)
+and
+[Barabási-Albert](https://en.wikipedia.org/wiki/Barabási–Albert_model) graphs:
 
 ```Python
 import networkx as nx
 from portrait_divergence import portrait_divergence
 
-G = nx.erdos_renyi_graph(100, 3/99)
-H = nx.barabasi_albert_graph(100, 3)
+Ger1  = nx.erdos_renyi_graph(100, 3/99)
+Ger2  = nx.erdos_renyi_graph(100, 3/99)
+Gba1 = nx.barabasi_albert_graph(100, 3)
+Gba2 = nx.barabasi_albert_graph(100, 3)
 
-Djs = portrait_divergence(G, H)
-print("Djs =", Djs)
+print("Djs(ER1,ER2) =", portrait_divergence(Ger1, Ger2))
+print("Djs(ER1,BA1) =", portrait_divergence(Ger1, Gba1))
+print("Djs(ER1,BA2) =", portrait_divergence(Ger1, Gba2))
+print("Djs(BA1,BA2) =", portrait_divergence(Gba1, Gba2))
+```
+
+Result:
+```text
+Djs(ER1,ER2) = 0.139438811433
+Djs(ER1,BA1) = 0.831004770397
+Djs(ER1,BA2) = 0.864124658944
+Djs(BA1,BA2) = 0.214176902159
 ```
 
 
 ## Requirements
 
 * [Python 3.x](https://www.python.org) with packages:
-    + [numpy](http://numpy.scipy.org/)
-    + [scipy](http://www.scipy.org/)
-    + [networkx](https://networkx.github.io)
+    + [Numpy](http://numpy.scipy.org/)
+    + [Scipy](http://www.scipy.org/)
+    + [NetworkX](https://networkx.github.io)
 
 A recent install of [Anaconda Python](https://www.anaconda.com) should come with everything you need.
+
+
+## Citation
+
+If you use Portrait Divergence, please cite our paper:
+
+James P. Bagrow and Erik M. Bollt, *An information-theoretic, all-scales approach to comparing networks* (2018)
+[arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
+
+
+### See also:
+
+*Portraits of Complex Networks* --- the original paper and idea behind Portrait Divergence.
+
+* [Journal Page](http://dx.doi.org/10.1209/0295-5075/81/68004)
+* [arXiv link](http://arxiv.org/abs/cond-mat/0703470)
+* [github.com/bagrow/portraits]((https://github.com/bagrow/portraits))
