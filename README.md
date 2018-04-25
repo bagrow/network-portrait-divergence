@@ -6,7 +6,7 @@ tool for comparing networks.
 
 
 <p align="center">
-<img src="portraits_figure.png" alt="Networks and their portraits"/>
+<img src="portraits_figure.png" alt="Networks and their portraits" width="75%"/>
 </p>
 
 
