@@ -100,7 +100,7 @@ James P. Bagrow and Erik M. Bollt, *An information-theoretic, all-scales approac
 ### See also:
 
 *[Portraits of Complex Networks](http://dx.doi.org/10.1209/0295-5075/81/68004)*
---- the original paper and idea behind Portrait Divergence.
+&mdash; the original paper and idea behind Portrait Divergence.
 
 * [Journal Page](http://dx.doi.org/10.1209/0295-5075/81/68004)
 * [arXiv:cond-mat/0703470](http://arxiv.org/abs/cond-mat/0703470)
