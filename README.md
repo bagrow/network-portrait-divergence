@@ -35,7 +35,7 @@ Python scripts:
 1. Networks stored in
    [GraphML](https://networkx.github.io/documentation/networkx-1.10/reference/readwrite.graphml.html)
    files:  
-    `python portrait_divergence.py -d --graphml digraph_time1.graphml digraph_time2.graphml`
+    `python portrait_divergence.py -graphml digraph_time1.graphml digraph_time2.graphml`
 
 1. Use faster C++ code (assuming it's installed):  
     `python portrait_divergence.py --cpp big_g.edgelist big_h.edgelist`
