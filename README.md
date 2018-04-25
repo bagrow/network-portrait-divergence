@@ -4,6 +4,11 @@ Portrait Divergence
 Python code for computing **portrait divergences**, a simple, general-purpose
 tool for comparing networks.
 
+<p align="center">
+<img src="portraits_figure.png" alt="Networks and their portraits" style="width: 500px;"/>
+</p>
+
+
 Please see the paper for more details:
 
 **An information-theoretic, all-scales approach to comparing networks**  
