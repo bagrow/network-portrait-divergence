@@ -96,6 +96,16 @@ If you use Portrait Divergence, please cite our paper:
 James P. Bagrow and Erik M. Bollt, *An information-theoretic, all-scales approach to comparing networks* (2018)
 [arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
 
+Here is a bibtex key:
+```text
+@article{bagrow2018information,
+  title={An information-theoretic, all-scales approach to comparing networks},
+  author={Bagrow, James P and Bollt, Erik M},
+  journal={arXiv preprint arXiv:1804.03665},
+  year={2018}
+}
+```
+
 
 ### See also:
 
