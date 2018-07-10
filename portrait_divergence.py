@@ -307,7 +307,7 @@ Columns are delimited with whitespace by default.
         G = nx.read_graphml(args.filename1)
         H = nx.read_graphml(args.filename2)
     else:
-        create_using = None
+        create_using = nx.Graph
         if args.directed:
             create_using = nx.DiGraph
         data = False
