@@ -295,6 +295,8 @@ Columns are delimited with whitespace by default.
     #print(args)
     
     if args.cpp:
+        if args.directed:
+            sys.exit("The C++ code does not currently support directed graphs. Use the Python code instead. Exiting...")
         portrait = portrait_cpp
     
     # read networks
