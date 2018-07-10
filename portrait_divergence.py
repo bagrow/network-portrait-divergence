@@ -290,13 +290,13 @@ Columns are delimited with whitespace by default.
     parser.add_argument('--graphml', action='store_true', 
             help='input files are .graphml file instead of two/three-column edgelists')
     parser.add_argument('--cpp', action='store_true', 
-            help='use faster C++ implementation of the network portraits. Requires B_matrix executable to be installed')
+            help='use faster C++ implementation of the network portraits. Requires B_matrix executable to be installed. Does not support directed or weighted graphs.')
     args = parser.parse_args()
     #print(args)
     
     if args.cpp:
-        if args.directed:
-            sys.exit("The C++ code does not currently support directed graphs. Use the Python code instead. Exiting...")
+        if args.directed or args.weighted:
+            sys.exit("The C++ code does not currently support directed or weighted graphs. Use the Python code instead. Exiting...")
         portrait = portrait_cpp
     
     # read networks
