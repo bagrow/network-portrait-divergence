@@ -307,7 +307,7 @@ Columns are delimited with whitespace by default.
     else:
         create_using = None
         if args.directed:
-            create_using = nx.DiGraph
+            create_using = nx.DiGraph()
         data = False
         if args.weighted:
             data = [(args.weighted, float)]
