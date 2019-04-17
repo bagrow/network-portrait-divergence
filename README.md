@@ -17,7 +17,15 @@ James P. Bagrow and Erik M. Bollt, 2018
 [arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
 
 
-## Usage
+### Table of Contents
+- [Usage](#usage)
+- [Requirements](#requirements)
+- [Citation ](#citation)
+
+
+
+
+## Usage  <a name="usage"/>
 
 The output of each calculation is a float between 0 and 1 describing how
 similar the two networks are (0 = identical, 1 = maximally different, according
@@ -79,7 +87,7 @@ Djs(BA1,BA2) = 0.214176902159
 ```
 
 
-## Requirements
+## Requirements  <a name="requirements"/>
 
 * [Python 3.x](https://www.python.org) with packages:
     + [Numpy](http://numpy.scipy.org/)
@@ -89,7 +97,7 @@ Djs(BA1,BA2) = 0.214176902159
 A recent install of [Anaconda Python](https://www.anaconda.com) should come with everything you need.
 
 
-## Citation
+## Citation   <a name="citation"/>
 
 If you use Portrait Divergence, please cite our paper:
 
