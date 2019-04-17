@@ -1,4 +1,4 @@
-Portrait Divergence
+Network Portrait Divergence
 ===================
 
 Python code for computing **portrait divergences**, a simple, general-purpose
