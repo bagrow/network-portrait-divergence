@@ -1,7 +1,7 @@
 Network Portrait Divergence
 ===================
 
-Python code for computing **portrait divergences**, a simple, general-purpose
+Python code for computing **network portrait divergences**, a simple, general-purpose
 tool for comparing networks.
 
 
@@ -104,7 +104,7 @@ If you use Portrait Divergence, please cite our paper:
 James P. Bagrow and Erik M. Bollt, *An information-theoretic, all-scales approach to comparing networks* (2018)
 [arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
 
-Here is a bibtex key:
+Here is a bibtex entry:
 ```text
 @article{bagrow2018information,
   title={An information-theoretic, all-scales approach to comparing networks},
