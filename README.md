@@ -101,7 +101,7 @@ A recent install of [Anaconda Python](https://www.anaconda.com) should come with
 
 If you use Portrait Divergence, please cite our paper:
 
-James P. Bagrow and Erik M. Bollt, *An information-theoretic, all-scales approach to comparing networks* (2018)
+James P. Bagrow and Erik M. Bollt, An information-theoretic, all-scales approach to comparing networks, *Applied Network Science*, 4 (1): 45 (2019)
 [arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
 
 Here is a bibtex entry:
