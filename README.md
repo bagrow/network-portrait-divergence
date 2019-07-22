@@ -13,7 +13,8 @@ tool for comparing networks.
 Please see the paper for more details:
 
 **An information-theoretic, all-scales approach to comparing networks**  
-James P. Bagrow and Erik M. Bollt, 2018  
+James P. Bagrow and Erik M. Bollt, 2019  
+[Applied Network Science (Open-Access)](https://doi.org/10.1007/s41109-019-0156-x)  
 [arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
 
 
@@ -106,11 +107,17 @@ James P. Bagrow and Erik M. Bollt, *An information-theoretic, all-scales approac
 
 Here is a bibtex entry:
 ```text
-@article{bagrow2018information,
-  title={An information-theoretic, all-scales approach to comparing networks},
-  author={Bagrow, James P and Bollt, Erik M},
-  journal={arXiv preprint arXiv:1804.03665},
-  year={2018}
+@article{bagrow2019information,
+	Author = {Bagrow, James P. and Bollt, Erik M.},
+	Doi = {10.1007/s41109-019-0156-x},
+	Journal = {Applied Network Science},
+	Number = {1},
+	Pages = {45},
+	Title = {An information-theoretic, all-scales approach to comparing networks},
+	Doi = {10.1007/s41109-019-0156-x},
+	eprint = {1804.03665},
+	Volume = {4},
+	Year = {2019},
 }
 ```
 
