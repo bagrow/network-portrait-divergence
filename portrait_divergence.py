@@ -97,7 +97,7 @@ def portrait_py(graph):
 
 
 portrait = portrait_py
-# portrait = portrait_cpp
+#portrait = portrait_cpp
 
 
 def weighted_portrait(G, paths=None, binedges=None):
@@ -177,21 +177,6 @@ def _graph_or_portrait(X):
     return X
 
 
-def _get_prob_distance(B):
-    d,K = B.shape
-    
-    v = np.arange(0, K)
-    # return (1/N**2) * (B*v).sum(axis=1) # not normalized unless G is connected
-    f = (B*v).sum(axis=1)
-    return f / f.sum()
-
-
-def _get_prob_k_given_L(B, N=None):
-    if N is None:
-        N = int(B[0,1])
-    return B/N
-
-
 def portrait_divergence(G, H, N1=None, N2=None):
     """Compute the portrait divergence between graphs G and H."""
     
@@ -199,19 +184,15 @@ def portrait_divergence(G, H, N1=None, N2=None):
     BH = _graph_or_portrait(H)
     BG, BH = pad_portraits_to_same_size(BG,BH)
     
-    # build joint distribution for G:
-    P_L   = _get_prob_distance(BG)
-    P_KgL = _get_prob_k_given_L(BG, N=N1)
-    P_KaL = P_KgL * P_L[:, None]
+    L, K = BG.shape
+    V = np.tile(np.arange(K),(L,1))
     
-    # build joint distribution for H:
-    Q_L   = _get_prob_distance(BH)
-    Q_KgL = _get_prob_k_given_L(BH, N=N2)
-    Q_KaL = Q_KgL * Q_L[:, None]
+    XG = BG*V / (BG*V).sum()
+    XH = BH*V / (BH*V).sum()
     
     # flatten distribution matrices as arrays:
-    P = P_KaL.ravel()
-    Q = Q_KaL.ravel()
+    P = XG.ravel()
+    Q = XH.ravel()
     M = 0.5*(P+Q)
     
     # lastly, get JSD:
