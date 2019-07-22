@@ -32,7 +32,7 @@ similar the two networks are (0 = identical, 1 = maximally different, according
 to this measure).
 
 
-Portrait divergences can be computed at the command line or within
+Network portrait divergences can be computed at the command line or within
 Python scripts:
 
 #### Command line
@@ -99,7 +99,7 @@ A recent install of [Anaconda Python](https://www.anaconda.com) should come with
 
 ## Citation   <a name="citation"/>
 
-If you use Portrait Divergence, please cite our paper:
+If you use Network Portrait Divergence, please cite our paper:
 
 James P. Bagrow and Erik M. Bollt, An information-theoretic, all-scales approach to comparing networks, *Applied Network Science*, 4 (1): 45 (2019)
 [arXiv:1804.03665](https://arxiv.org/abs/1804.03665)
@@ -124,7 +124,8 @@ Here is a bibtex entry:
 ### See also:
 
 *[Portraits of Complex Networks](http://dx.doi.org/10.1209/0295-5075/81/68004)*
-&mdash; the original paper and idea behind Portrait Divergence.
+&mdash; the original paper on Network Portraits, one of the ideas behind
+Network Portrait Divergence.
 
 * [Journal Page](http://dx.doi.org/10.1209/0295-5075/81/68004)
 * [arXiv:cond-mat/0703470](http://arxiv.org/abs/cond-mat/0703470)
