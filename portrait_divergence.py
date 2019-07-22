@@ -245,8 +245,8 @@ portrait divergence to STDOUT.
     epilog_str = """
 Network file format
 ===================
-Files may be edgelists (cf. networkx.read_edgelist()) or graphml files
-(cf. networkx.read_graphml()).
+Files may be edgelists (see networkx.read_edgelist()) or graphml files
+(see networkx.read_graphml()).
 
 Edgelists specify the network in a two- or three-column matrix format:
     node_i <delimiter> node_j <delimiter> [weight_ij]
