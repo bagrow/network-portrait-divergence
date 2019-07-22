@@ -101,8 +101,8 @@ portrait = portrait_py
 
 
 def weighted_portrait(G, paths=None, binedges=None):
-    """Compute weighted portrait, using Dijkstra's algorithm for finding
-    shortest paths.
+    """Compute weighted portrait of G, using Dijkstra's algorithm for finding
+    shortest paths. G is a networkx object.
     
     Return matrix B where B[i,j] is the number of starting nodes in graph with
     j nodes at distance d_i <  d < d_{i+1}.
@@ -169,16 +169,16 @@ def pad_portraits_to_same_size(B1,B2):
 
 
 def _graph_or_portrait(X):
-    """Check if X is a nx (di)graph. If it is, get its portrait. Otherwise assume
-    it's a portrait and just return it.
+    """Check if X is a nx (di)graph. If it is, get its portrait. Otherwise
+    assume it's a portrait and just return it.
     """
     if isinstance(X, (nx.Graph, nx.DiGraph)):
         return portrait(X)
     return X
 
 
-def portrait_divergence(G, H, N1=None, N2=None):
-    """Compute the portrait divergence between graphs G and H."""
+def portrait_divergence(G, H):
+    """Compute the network portrait divergence between graphs G and H."""
     
     BG = _graph_or_portrait(G)
     BH = _graph_or_portrait(H)
@@ -193,9 +193,9 @@ def portrait_divergence(G, H, N1=None, N2=None):
     # flatten distribution matrices as arrays:
     P = XG.ravel()
     Q = XH.ravel()
-    M = 0.5*(P+Q)
     
     # lastly, get JSD:
+    M = 0.5*(P+Q)
     KLDpm = entropy(P, M, base=2)
     KLDqm = entropy(Q, M, base=2)
     JSDpq = 0.5*(KLDpm + KLDqm)
@@ -204,7 +204,7 @@ def portrait_divergence(G, H, N1=None, N2=None):
 
 
 def portrait_divergence_weighted(G,H, bins=None, binedges=None):
-    """portrait divergence between two weighted graphs.
+    """Network portrait divergence between two weighted graphs.
     
     bins = width of bins in percentiles
     binedges = vector of bin edges
@@ -228,7 +228,7 @@ def portrait_divergence_weighted(G,H, bins=None, binedges=None):
     BG = weighted_portrait(G, paths=paths_G, binedges=binedges)
     BH = weighted_portrait(H, paths=paths_H, binedges=binedges)
     
-    return portrait_divergence(BG, BH, N1=G.number_of_nodes(), N2=H.number_of_nodes())
+    return portrait_divergence(BG, BH)
 
 
 class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescriptionHelpFormatter):
@@ -238,8 +238,8 @@ class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter, argparse.RawDescri
 if __name__ == '__main__':
 
     description_str="""
-Compute portrait divergences between a pair of networks. Prints the portrait
-divergence to STDOUT.
+Compute network portrait divergences between a pair of networks. Prints the
+portrait divergence to STDOUT.
 """
     
     epilog_str = """
