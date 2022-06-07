@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Bagrow"
+  given-names: "James P."
+  orcid: "https://orcid.org/0000-0002-4614-0792"
+title: "Network Portrait Divergence"
+url: "https://github.com/bagrow/network-portrait-divergence"
+preferred-citation:
+  type: article
+  authors:
+  - family-names: "Bagrow"
+    given-names: "James P."
+    orcid: "https://orcid.org/0000-0002-4614-0792"
+  - family-names: "Bollt"
+    given-names: "Erik M."
+    orcid: "https://orcid.org/0000-0001-7083-7592"
+  title: "An information-theoretic, all-scales approach to comparing networks"
+  year: 2019
+  url: https://doi.org/10.1007/s41109-019-0156-x
+  journal: Applied Network Science
+  volume: 4
+  number: 1
+  pages: 45
+  identifiers:
+    - type: other
+      value: "arXiv:1804.03665"
+      description: The ArXiv preprint of the paper
+    - type: doi
+      value: "10.1007/s41109-019-0156-x"
+      description: The DOI of the journal paper
