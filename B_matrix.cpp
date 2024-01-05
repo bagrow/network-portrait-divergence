@@ -9,6 +9,7 @@
 #include <vector> // this code makes heavy use of the 
 #include <queue>  // STL, since I suck at actual C
 #include <map>
+#include <cstdlib>
 
 using namespace std;
 
@@ -41,8 +42,12 @@ vector<vector<int> > readEdgeList(string fN){
 	// load up adjacency lists for graph:
 	ifstream fin(fN.c_str(), ios::in);
 	while (fin >> s >> t) {
-		graph[s].push_back(t);
-		graph[t].push_back(s);
+		if(directed){
+            graph[s].push_back(t);
+        } else {
+            graph[s].push_back(t);
+            graph[t].push_back(s);
+        }
 	}
 	fin.close();
 	
@@ -81,24 +86,30 @@ vector<int> BFS( const vector<vector<int> >& graph, int start ) {
 int main (int argc, char const* argv[]){
 	// parse command line args, needs to be better:
 	string inputFileName, outputFileName;
+	bool directed = false;
 	if(argc == 1){
-		cout << "\nUsage: ./B_matrix input_file output_file"                << endl;
+		cout << "\nUsage: ./B_matrix [-d] input_file output_file"           << endl;
 		cout << "\ninput_file is an M x 2 edgelist of integers, where the"  << endl;
 		cout << "     integers 0,1,...,N-1 represent the nodes of the "     << endl;
 		cout << "     graph. Each line must have two integers separated by" << endl;
 		cout << "     a space.  These are the edges of the graph."          << endl;
 		cout << "\noutput_file is the file where the B matrix will be"      << endl;
 		cout << "     saved."                                               << endl;
+		cout << "\n-d: put the flag if the graphs should be considered as"  << endl;
+        cout << "     directed."                                            << endl;
 		return 0;
 	}
 	else if(argc == 3){
 		inputFileName  = argv[1];
 		outputFileName = argv[2];
-	}
-	else{
-		cout << "Wrong number of arguments, aborting..." << endl;
-		return 1;
-	}
+	} else if(argc == 4){
+        inputFileName  = argv[2];
+        outputFileName = argv[3];
+        directed = true;
+    } else {
+        cout << "Wrong number of arguments, aborting..." << endl;
+        return 1;
+    }
 	
 	// get the graph:
 	vector<vector<int> > graph;
